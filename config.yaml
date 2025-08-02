@@ -1,5 +1,5 @@
 # required configuration options
-name: Fusion_fork
+name: Fusion
 version: 2024.10.1
 slug: ha_fusion_fork
 description: A modern, easy-to-use and performant custom Home Assistant dashboard
@@ -35,4 +35,4 @@ ports:
   8099/tcp: null
 
 # docker hub
-build: .
+image: damigui/addon-ha-fusion-{arch}
