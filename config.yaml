@@ -35,4 +35,4 @@ ports:
   8099/tcp: null
 
 # docker hub
-image: DAMIGUI/addon-ha-fusion-{arch}
+build: .
