@@ -19,18 +19,10 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Extract version from config.yaml
-        id: get_version
-        run: |
-          VERSION=$(grep '^version:' config.yaml | awk '{print $2}')
-          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
-
       - name: Publish
         uses: home-assistant/builder@master
         with:
           args: |
-            --all
-            --version ${{ steps.get_version.outputs.VERSION }}
-            --target /data
-            --docker-hub ${{ secrets.DOCKERHUB_USERNAME }}
+            --all \
+            --target /data \
+            --docker-hub matt8707
